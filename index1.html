@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Electric Dreams</title>
+
+	<style type="text/css">
+		/*style the computer text, input, and button*/
+	</style>
+</head>
+
+<body>
+	<h1>Electric Dreams</h1>
+	<p id="computer">Hi, how are you today?</p>
+	<input id="human" type="text" placeholder="Type your response...">
+	<button>Enter</button>
+
+	<script type="text/javascript">
+		//your script here
+		//There are three common methods to gain access (control) of markup elements
+		//We have used querySelector
+		var computer = document.querySelector('#computer');
+		//without modifying the markup finish the next 2 var statements
+		var human = document.getElementById('human');
+		var button = document.getElementsByTagName('button')[0];
+		//other vars we will use in the next step
+		var responseNumber; //used to store the value of the response to display to the player
+		var newResponse; //used to generate the next response and prevent duplication of responses
+		var humanMsg = ""; //will hold the text (value) of the player input
+		var computerMsg = ""; //will hold the computer text displayed to the player each turn
+		var genericResponses = []; //will be populated with messages to respond to the player
+		//make the human input the focus when the page loads
+		human.focus();
+		button.addEventListener("click", clickHandler, false);
+
+		function clickHandler() {
+			playGame();
+		}
+		window.addEventListener("keydown", keydownHandler, false);
+
+		function keydownHandler(event) {
+			if (event.keyCode === 13) {
+				playGame();
+			}
+		}
+
+		function playGame() {
+			//let the games begin
+			//order of business:
+			//1. determine a random response
+			//2. update the text in the computer field to the new response
+			computer.innerHTML = "Yo";
+			//3. wipe the text in the player input field
+		}
+	</script>
+</body>
+
+</html>
