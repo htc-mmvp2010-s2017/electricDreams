@@ -6,6 +6,7 @@
 
 	<style type="text/css">
 		/*style the computer text, input, and button*/
+		.displayNone {display:none;}
 	</style>
 </head>
 
@@ -16,14 +17,9 @@
 	<button>Enter</button>
 
 	<script type="text/javascript">
-		//your script here
-		//There are three common methods to gain access (control) of markup elements
-		//We have used querySelector
 		var computer = document.querySelector('#computer');
-		//without modifying the markup finish the next 2 var statements
 		var human = document.getElementById('human');
 		var button = document.getElementsByTagName('button')[0];
-		//other vars we will use in the next step
 		var responseNumber; //used to store the value of the response to display to the player
 		var newResponse; //used to generate the next response and prevent duplication of responses
 		var humanMsg = ""; //will hold the text (value) of the player input
@@ -32,16 +28,16 @@
 			"Good for you.",
 			"You are a loser.",
 			"I like you."
-		]; //will be populated with messages to respond to the player
-		//make the human input the focus when the page loads
+		];
+		
 		human.focus();
-		button.addEventListener("click", clickHandler, false);
 
+		button.addEventListener("click", clickHandler, false);
 		function clickHandler() {
 			playGame();
 		}
-		window.addEventListener("keydown", keydownHandler, false);
 
+		window.addEventListener("keydown", keydownHandler, false);
 		function keydownHandler(event) {
 			if (event.keyCode === 13) {
 				playGame();
@@ -49,40 +45,52 @@
 		}
 
 		function playGame() {
-			//let the games begin
-			//order of business:
-			// //version1
-			// //1. determine a random response
-			// // responseNumber = Math.floor(Math.random()*genericResponses.length);
-			// //grab the message from the response array
-			// computerMsg = genericResponses[responseNumber];
-			// //2. update the text in the computer field to the new response
-			// computer.innerHTML = computerMsg;
+			// //let the games begin
+			// //order of business:
+			//version1
+			//1. determine a random response
+			responseNumber = Math.floor(Math.random()*genericResponses.length);
+			//grab the message from the response array
+			computerMsg = genericResponses[responseNumber];
+			//2. update the text in the computer field to the new response
+			computer.innerHTML = computerMsg;
+
 			// //version2
 			// //1. determine a random response
 			// newResponse = Math.floor(Math.random()*genericResponses.length);
+			// //prevent using the same response twice in a row
 			// while (newResponse === responseNumber){
 			// 	newResponse = Math.floor(Math.random()*genericResponses.length);
 			// }
+			// //keep track of which response is being used
 			// responseNumber = newResponse;
 			// //grab the message from the response array
 			// computerMsg = genericResponses[responseNumber];
 			// //2. update the text in the computer field to the new response
 			// computer.innerHTML = computerMsg;
+
 			// //version3
+			// //give a respose if any still exist
 			// if (genericResponses.length >0){
 			// 	newResponse = Math.floor(Math.random()*genericResponses.length);
 			// 	responseNumber = newResponse;
 			// 	computer.innerHTML = genericResponses[responseNumber];
+			// 	//remove response from array so it cannot be used again
 			// 	genericResponses.splice(responseNumber,1);
 			// } else {
+			// 	//no resposes left in the array so we enter the final response
 			// 	computer.innerHTML = "I am done talking to you. You may leave now.";
+			// 	//visually remove human field and button by changing their class
 			// 	human.className="displayNone";
 			// 	button.className="displayNone";
 			// 	setTimeout(endGame,2000);
 			// }
+
 			// //version4
+			// //knock the input to lowerCase so we may evaluate it easier
 			// humanMsg = (human.value).toLowerCase();
+			// //looking for specific words in the answer
+			// //if "indexOf" returns "-1" that means it did not find that value
 			// if (humanMsg.indexOf("good") !== -1){
 			// 	computerMsg = "That is good for you.";
 			// }else if (humanMsg.indexOf("bad") !== -1){
@@ -91,11 +99,13 @@
 			// 	computerMsg = "You know nothing.";
 			// }
 			// computer.innerHTML = computerMsg;
+
 			//3. wipe the text in the player input field
 			human.value = "";
 		}
 
 		function endGame() {
+			////jump to a new webpage
 			////.assign() leaves the back button working
 			////.replace() disables the back button by replacing the location in the history
 			location.assign("http://en.wikipedia.org/wiki/Electric_Dreams_(film)");

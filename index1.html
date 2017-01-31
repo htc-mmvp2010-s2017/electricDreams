@@ -30,14 +30,15 @@
 		var computerMsg = ""; //will hold the computer text displayed to the player each turn
 		var genericResponses = []; //will be populated with messages to respond to the player
 		//make the human input the focus when the page loads
+		
 		human.focus();
-		button.addEventListener("click", clickHandler, false);
 
+		button.addEventListener("click", clickHandler, false);
 		function clickHandler() {
 			playGame();
 		}
-		window.addEventListener("keydown", keydownHandler, false);
 
+		window.addEventListener("keydown", keydownHandler, false);
 		function keydownHandler(event) {
 			if (event.keyCode === 13) {
 				playGame();

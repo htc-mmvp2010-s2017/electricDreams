@@ -16,34 +16,31 @@
     <button>Enter</button>
 
     <script type="text/javascript">
-        //your script here
-        //There are three common methods to gain access (control) of markup elements
-        //We have used querySelector
         var computer = document.querySelector('#computer');
-        //without modifying the markup finish the next 2 var statements
         var human = document.getElementById('human');
         var button = document.getElementsByTagName('button')[0];
-        //other vars we will use in the next step
-        var responseNumber; //used to store the value of the response to display to the player
-        var newResponse; //used to generate the next response and prevent duplication of responses
-        var humanMsg = ""; //will hold the text (value) of the player input
-        var computerMsg = ""; //will hold the computer text displayed to the player each turn
+        var responseNumber;
+        var newResponse;
+        var humanMsg = "";
+        var computerMsg = "";
+
         //new//
         var questionTrack = "start";
+
         var genericResponses = [
             "Good for you.",
             "You are a loser.",
             "I like you."
-        ]; //will be populated with messages to respond to the player
-        //make the human input the focus when the page loads
-        human.focus();
-        button.addEventListener("click", clickHandler, false);
+        ];
 
+        human.focus();
+
+        button.addEventListener("click", clickHandler, false);
         function clickHandler() {
             playGame();
         }
-        window.addEventListener("keydown", keydownHandler, false);
 
+        window.addEventListener("keydown", keydownHandler, false);
         function keydownHandler(event) {
             if (event.keyCode === 13) {
                 playGame();
@@ -52,19 +49,9 @@
 
         function playGame() {
             //let the games begin
-            // //version4
-            // humanMsg = (human.value).toLowerCase();
-            // if (humanMsg.indexOf("good") !== -1){
-            // 	computerMsg = "That is good for you.";
-            // }else if (humanMsg.indexOf("bad") !== -1){
-            // 	computerMsg = "You live a sad life.";
-            // }else {
-            // 	computerMsg = "You know nothing.";
-            // }
-            // computer.innerHTML = computerMsg;
+            humanMsg = (human.value).toLowerCase();
             // //version5
             //switch questionTrack (gameState type thing)
-            humanMsg = (human.value).toLowerCase();
             switch (questionTrack) {
                 case "start":
                     firstAnalysis();
@@ -87,7 +74,6 @@
             }
             computer.innerHTML = computerMsg;
             ////////////////////////
-            //3. wipe the text in the player input field
             human.value = "";
         }
 
