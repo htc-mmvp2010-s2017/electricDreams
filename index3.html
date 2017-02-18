@@ -2,19 +2,177 @@
 <html>
 
 <head>
-    <title>Electric Dreams</title>
+    <title>Love My Java</title>
+    <!-- author: Darla Safarian -->
 
     <style type="text/css">
-        /*style the computer text, input, and button*/
-        .displayNone {display:none;}
+
+        body{
+  background: #3f4249;
+  margin:0;
+  }
+
+  .cup{
+    margin-top: 210px;
+  }
+  .intro{
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Asap', sans-serif;
+  text-align: center;
+  color: #e9eaf0;
+  text-shadow: 0px 1px 1px #4e525a;
+  }
+  .intro img{
+  display: inline-block;
+  }
+
+  .steam{
+  position: relative;
+  top:40px;
+  left:50px;
+  -webkit-animation: steam 5s linear infinite 3s;
+  -moz-animation: steam 5s linear infinite 3s;
+  -ms-animation: steam 5s linear infinite 3s;
+  -o-animation: steam 5s linear infinite 3s;
+  animation: steam 5s linear infinite 3s;
+
+  }
+  .steam:before,
+  .steam:after{
+  content: " ";
+  position: absolute;
+  top:0;
+  left:-15px;
+  border-right: 0px solid transparent;
+  border-top: 2px solid #d6d2d2;
+  border-left: 5px solid #d6d2d2;
+  border-bottom: 2px solid transparent;
+  width: 40px;
+  height: 70px;
+  z-index: 4;
+  border-radius: 80% 0 10% 10%;
+
+  -webkit-transform: rotate(168deg) skewY(10deg);
+  -moz-transform: rotate(168deg) skewY(10deg);
+  -ms-transform: rotate(168deg) skewY(10deg);
+  -o-transform: rotate(168deg) skewY(10deg);
+  transform: rotate(168deg) skewY(10deg);
+
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7px);
+  -ms-filter: blur(7px);
+  filter: blur(7px);
+  }
+
+  .steam:after{
+  top:40px;
+  left:-35px;
+  z-index: 4;
+  border-radius: 80% 0 10% 10%;
+  -webkit-transform: rotate(315deg) skewY(10deg);
+  -moz-transform: rotate(315deg) skewY(10deg);
+  -ms-transform: rotate(315deg) skewY(10deg);
+  -o-transform: rotate(315deg) skewY(10deg);
+  transform: rotate(315deg) skewY(10deg);
+
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  -o-filter: blur(7px);
+  -ms-filter: blur(7px);
+  filter: blur(7px);
+  }
+
+
+  @-webkit-keyframes steam {
+  0% { top: 100px; opacity: .075; visibility: visible; }
+  20% { top: 80px; opacity: 0.2; }
+  40% { top: 60px; opacity: 0.4; }
+  60% { top: 40px; opacity: 0.2; }
+  80% { top: 20px; opacity: .075; }
+  100% { top: 0px; opacity: 0; visibility: hidden; }
+  }
+
+  @-moz-keyframes steam {
+  0% { top: 100px; opacity: .075; visibility: visible; }
+  20% { top: 80px; opacity: 0.2; }
+  40% { top: 60px; opacity: 0.4; }
+  60% { top: 40px; opacity: 0.2; }
+  80% { top: 20px; opacity: .075; }
+  100% { top: 0px; opacity: 0; visibility: hidden; }
+  }
+
+  @-ms-keyframes steam {
+  0% { top: 100px; opacity: .075; visibility: visible; }
+  20% { top: 80px; opacity: 0.2; }
+  40% { top: 60px; opacity: 0.4; }
+  60% { top: 40px; opacity: 0.2; }
+  80% { top: 20px; opacity: .075; }
+  100% { top: 0px; opacity: 0; visibility: hidden; }
+  }
+
+  @-o-keyframes steam {
+  0% { top: 100px; opacity: .075; visibility: visible; }
+  20% { top: 80px; opacity: 0.2; }
+  40% { top: 60px; opacity: 0.4; }
+  60% { top: 40px; opacity: 0.2; }
+  80% { top: 20px; opacity: .075; }
+  100% { top: 0px; opacity: 0; visibility: hidden; }
+  }
+
+  @keyframes steam {
+  0% { top: 100px; opacity: .075; visibility: visible; }
+  20% { top: 80px; opacity: 0.2; }
+  40% { top: 60px; opacity: 0.4; }
+  60% { top: 40px; opacity: 0.2; }
+  80% { top: 20px; opacity: .075; }
+  100% { top: 0px; opacity: 0; visibility: hidden; }
+  }
+  .chat{
+  padding-top: 5%;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Asap', sans-serif;
+  text-align: center;
+  color: #e9eaf0;
+  text-shadow: 0px 1px 1px #4e525a;
+  }
+  .answer{
+    text-align: center;
+  }
+  footer{
+  font-size: 8px;
+  font-family: 'Asap', sans-serif;
+  color: #e9eaf0;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  }
+    .displayNone {display:none;}
     </style>
 </head>
-
 <body>
-    <h1>Electric Dreams</h1>
-    <p id="computer">Hi, how are you today?</p>
+
+  <header class="intro">
+    <div class="coffee">
+    	<span class="steam"></span>
+    </div>
+    <img src="coffee.png" alt="Coffee Logo" class = "cup"></p>
+  </header>
+  <div class="chat">
+    <p id="computer">I’m a big coffee lover. Are you?</p>
+
+  </div>
+  <div class= "answer" >
     <input id="human" type="text" placeholder="Type your response...">
     <button>Enter</button>
+  </div>
+
+  <footer>
+    <p> &#169 2017 DSafar. All rights reserved.</p>
+  </footer>
 
     <script type="text/javascript">
         var computer = document.querySelector('#computer');
@@ -29,9 +187,9 @@
         var questionTrack = "start";
 
         var genericResponses = [
-            "Good for you.",
-            "You are a loser.",
-            "I like you."
+            "Hmmm. I’m not sure you know what you’re talking about.",
+            "Well, if that’s what you think then perhaps you should find something more exciting.",
+            "Excellent choice. You’re awesome."
         ];
 
         human.focus();
@@ -57,17 +215,20 @@
                 case "start":
                     firstAnalysis();
                     break;
+                case "shop":
+                    shopAnalysis();
+                    break;
+                case "drink":
+                    drinkAnalysis();
+                    break;
+                case "season":
+                    seasonAnalysis();
+                    break;
+                case "flower":
+                    flowerAnalysis();
+                    break;
                 case "color":
                     colorAnalysis();
-                    break;
-                case "dog":
-                    dogAnalysis();
-                    break;
-                case "cat":
-                    catAnalysis();
-                    break;
-                case "dogOwner":
-                    dogOwnerAnalysis();
                     break;
                 default:
                     genericResponse();
@@ -86,7 +247,7 @@
                 computerMsg = genericResponses[responseNumber];
                 genericResponses.splice(responseNumber, 1);
             } else {
-                computerMsg = "I am done talking to you. You may leave now.";
+                computerMsg = "WHAT!!!! And this had been going so well. GOODBYE!";
                 human.className = "displayNone";
                 button.className = "displayNone";
                 setTimeout(endGame, 2000);
@@ -94,61 +255,92 @@
         }
 
         function firstAnalysis() {
-            if (humanMsg.indexOf("good") !== -1) {
-                computerMsg = "I am happy for you. What is your favorite color?";
-                questionTrack = "color";
-            } else if (humanMsg.indexOf("bad") !== -1) {
-                computerMsg = "You sound depressed. Do you like dogs?";
-                questionTrack = "dog";
+            if (humanMsg.indexOf("yes") !== -1) {
+                computerMsg = "What’s your favorite coffee shop?";
+                questionTrack = "shop";
+            } else if (humanMsg.indexOf("no") !== -1) {
+                computerMsg = "What planet do you live on? What's your favorite flower?";
+                questionTrack = "flower";
             } else {
+                genericResponse();
+            }
+        }
+
+        function shopAnalysis() {
+            if (humanMsg.indexOf("starbucks") !== -1) {
+                computerMsg = "I love Starbucks. What’s your favorite drink?";
+                questionTrack = "drink";
+            } else if (humanMsg.indexOf("caribou") !== -1) {
+                computerMsg = "Not my favorite but it’ll do in a pinch. What’s your favorite drink?";
+                questionTrack = "drink";
+            } else if (humanMsg.indexOf("dunn brothers") !== -1) {
+                computerMsg = "Arrgghh…not my fav. What’s your favorite drink?";
+                questionTrack = "drink";
+            } else {
+                genericResponse();
+            }
+        }
+
+        function drinkAnalysis() {
+            if (humanMsg.indexOf("cap") !== -1) {
+                computerMsg = "Classic but good. What’s your favorite season?";
+                questionTrack = "season";
+            } else if (humanMsg.indexOf("latte") !== -1) {
+                computerMsg = "Not a hard core coffee drinker huh? What’s your favorite flower?";
+                questionTrack = "flower";
+            } else if (humanMsg.indexOf("presso") !== -1) {
+                computerMsg = "Hard core huh? What’s your favorite season?";
+                questionTrack = "season";
+            } else {
+                genericResponse();
+            }
+        }
+
+        function seasonAnalysis() {
+            if (humanMsg.indexOf("summer") !== -1) {
+                computerMsg = "Cool. What’s your favorite flower?";
+                questionTrack = "flower";
+            } else if (humanMsg.indexOf("fall") !== -1) {
+                computerMsg = "It is beautiful. What’s your favorite fall color?";
+                questionTrack = "color";
+            } else if (humanMsg.indexOf("autumn") !== -1) {
+                computerMsg = "It is beautiful. What’s your favorite fall color?";
+                questionTrack = "color";
+            } else if (humanMsg.indexOf("spring") !== -1) {
+                computerMsg = "Refreshing. What’s your favorite flower?";
+                questionTrack = "flower";
+            }else {
+                genericResponse();
+            }
+        }
+
+        function flowerAnalysis() {
+            if (humanMsg.indexOf("rose") !== -1) {
+                computerMsg = "Beautiful but perhaps you're really more of a tea person.";
+                // questionTrack = "";
+            } else if (humanMsg.indexOf("tulip") !== -1) {
+                computerMsg = "Nice choice. I see you do have good taste after all.";
+                // questionTrack = "";
+            }
+            else {
                 genericResponse();
             }
         }
 
         function colorAnalysis() {
             if (humanMsg.indexOf("red") !== -1) {
-                computerMsg = "You sound passionate. Do you want to go out on a virtual date?";
-                questionTrack = "date";
-            } else if (humanMsg.indexOf("blue") !== -1) {
-                computerMsg = "I thought you said you were feeling good. Are you sure you are not sad?";
-                questionTrack = "sad";
-            } else {
-                genericResponse();
-            }
-        }
-
-        function dogAnalysis() {
-            if (humanMsg.indexOf("yes") !== -1) {
-                computerMsg = "That is good. Do you have a dog?";
-                questionTrack = "dogOwner";
-            } else if (humanMsg.indexOf("no") !== -1) {
-                computerMsg = "Too bad. It is scientifically proven that dogs can make you happy. Are you a cat person?";
-                questionTrack = "cat";
-            } else {
-                genericResponse();
-            }
-        }
-
-        function catAnalysis() {
-            if (humanMsg.indexOf("yes") !== -1) {
-                computerMsg = "That is strange. I was sure you were a dog person. What is your favorite color?";
-                questionTrack = "color";
-            } else if (humanMsg.indexOf("no") !== -1) {
-                computerMsg = "Then you must be a reptile person. Do you like snakes?";
-                questionTrack = "snake";
-            } else {
-                genericResponse();
-            }
-        }
-
-        function dogOwnerAnalysis() {
-            if (humanMsg.indexOf("yes") !== -1) {
-                computerMsg = "What is the name of your dog?";
-                questionTrack = "dogName";
-            } else if (humanMsg.indexOf("no") !== -1) {
-                computerMsg = "I think you should get one. Do you prefer big or small dogs?";
-                questionTrack = "dogSize";
-            } else {
+                computerMsg = "The reds are vibrant. You must be really interesting. What's your favorite flower?";
+                questionTrack = "flower";
+            } else if (humanMsg.indexOf("orange") !== -1) {
+                computerMsg = "Orange is the color of creativity. You must be talented. What's your favorite flower?";
+                questionTrack = "flower";
+            } else if (humanMsg.indexOf("gold") !== -1) {
+                computerMsg = "Are you sure you like coffee? What's your favorite flower?";
+                questionTrack = "flower";
+            } else if (humanMsg.indexOf("brown") !== -1) {
+                computerMsg = "Really? Are you sure? What’s your favorite flower?";
+                questionTrack = "flower";
+            }else {
                 genericResponse();
             }
         }
@@ -156,7 +348,7 @@
         function endGame() {
             ////.assign() leaves the back button working
             ////.replace() disables the back button by replacing the location in the history
-            location.assign("http://en.wikipedia.org/wiki/Electric_Dreams_(film)");
+            location.assign("https://www.theatlantic.com/health/archive/2012/11/the-case-for-drinking-as-much-coffee-as-you-like/265693/");
         }
     </script>
 </body>
